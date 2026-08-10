@@ -7,7 +7,7 @@ export default function Register() {
       <input type="text" placeholder="Username" />
       <input type="text" placeholder="Email" />
       <input type="password" placeholder="Password" />
-      <button>Register</button>
+      <button onClick={}>Register</button>
     </div>
   );
 }
