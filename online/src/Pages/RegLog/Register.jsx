@@ -5,11 +5,29 @@ export default function Register() {
   let [eMail, SetEmail] = useState("");
   let [passWord, SetPassword] = useState("");
 
-  function GatherData() {
+  async function GatherData() {
     const dataToBack = { userName, eMail, passWord };
 
     console.log(dataToBack);
+
+    const response = await fetch("http://localhost:5000/register", {
+      //await because needs time to catch up, so need to wait the answer.
+      method: "POST", //method set
+      headers: {
+        "Content-Type": "application/json", //prepare the backend to receive json format
+      },
+      body: JSON.stringify(dataToBack), //render to json format
+    });
+    console.log(response);
   }
+
+  /*
+GET    → adat lekérése
+POST   → új adat küldése/létrehozása
+PUT    → adat teljes módosítása
+PATCH  → adat részleges módosítása
+DELETE → adat törlése
+*/
 
   return (
     <div>

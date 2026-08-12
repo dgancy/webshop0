@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Login() {
   let [userName, SetUserName] = useState("");
   let [passWord, SetPassword] = useState("");
 
-  function GatherData() {
+  /*function GatherData() {
     const dataToBack = { userName, passWord };
 
     console.log(dataToBack);
-  }
+  }*/
 
   return (
     <div>
