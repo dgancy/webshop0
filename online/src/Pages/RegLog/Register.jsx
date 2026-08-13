@@ -30,30 +30,46 @@ DELETE → adat törlése
 */
 
   return (
-    <div>
-      <p>Please Register an account!</p>
-      <input
-        type="text"
-        id="username"
-        placeholder="Username"
-        value={userName}
-        onChange={(e) => SetUserName(e.target.value)}
-      />
-      <input
-        type="text"
-        id="email"
-        placeholder="Email"
-        value={eMail}
-        onChange={(e) => SetEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        id="password"
-        placeholder="Password"
-        value={passWord}
-        onChange={(e) => SetPassword(e.target.value)}
-      />
-      <button onClick={GatherData}>Register</button>
-    </div>
+    <form style={{ background: "black", color: "white", height: "100vh" }}>
+      <div>
+        <p>Please Register an account!</p>
+        <input
+          type="text"
+          id="username"
+          placeholder="Username"
+          value={userName}
+          onChange={(e) => SetUserName(e.target.value)}
+        />
+        <input
+          type="text"
+          id="email"
+          placeholder="Email"
+          value={eMail}
+          onChange={(e) => SetEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          value={passWord}
+          onChange={(e) => SetPassword(e.target.value)}
+        />
+        <div>
+          <button
+            style={{
+              border: "none",
+              padding: "15px 32px",
+              display: "inline-block",
+              margin: "4px 2px",
+              cursor: "pointer",
+              color: "black",
+            }}
+            onClick={GatherData}
+          >
+            Register
+          </button>
+        </div>
+      </div>
+    </form>
   );
 }

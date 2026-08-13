@@ -16,9 +16,30 @@ export default function NavBar() {
 
   return (
     <div>
-      <button onClick={navigateToHome}>Home</button>
-      <button onClick={navigateToLogin}>Login</button>
-      <button onClick={navigateToRegister}>Register</button>
+      <button style={{
+              border: "none",
+              padding: "15px 32px",
+              display: "inline-block",
+              margin: "4px 2px",
+              cursor: "pointer",
+              color: "black",
+            }} onClick={navigateToHome}>Home</button>
+      <button style={{
+              border: "none",
+              padding: "15px 32px",
+              display: "inline-block",
+              margin: "4px 2px",
+              cursor: "pointer",
+              color: "black",
+            }} onClick={navigateToLogin}>Login</button>
+      <button style={{
+              border: "none",
+              padding: "15px 32px",
+              display: "inline-block",
+              margin: "4px 2px",
+              cursor: "pointer",
+              color: "black",
+            }} onClick={navigateToRegister}>Register</button>
     </div>
   );
 }

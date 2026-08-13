@@ -11,23 +11,25 @@ export default function Login() {
   }*/
 
   return (
-    <div>
-      <p>Please Login with your account!</p>
-      <input
-        type="text"
-        id="username"
-        placeholder="Username"
-        value={userName}
-        onChange={(e) => SetUserName(e.target.value)}
-      />{" "}
-      <input
-        type="password"
-        id="password"
-        placeholder="Password"
-        value={passWord}
-        onChange={(e) => SetPassword(e.target.value)}
-      />
-      <button>Login</button>
-    </div>
+    <form style={{ background: "black", color: "white", height: "100vh" }}>
+      <div>
+        <p>Please Login with your account!</p>
+        <input
+          type="text"
+          id="username"
+          placeholder="Username"
+          value={userName}
+          onChange={(e) => SetUserName(e.target.value)}
+        />{" "}
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          value={passWord}
+          onChange={(e) => SetPassword(e.target.value)}
+        />
+        <button>Login</button>
+      </div>
+    </form>
   );
 }
