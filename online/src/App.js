@@ -4,6 +4,7 @@ import OpenPage from "./Pages/OpenPage";
 import Login from "./Pages/RegLog/Login";
 import Register from "./Pages/RegLog/Register";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Shop from "./Pages/Shop";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<OpenPage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/shop" element={<Shop />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>

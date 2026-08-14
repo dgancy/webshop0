@@ -1,0 +1,61 @@
+import React from "react";
+
+export default function Shop() {
+  return (
+    <body style={{height: "100vh", width: "100vh" }}>
+      <table>
+        <tr>
+          <th>
+            <a>Item1</a>
+            <p>Item1Decription</p>
+          </th>
+          <th></th>
+          <th>
+            <a>Item2</a>
+            <p>Item2Decription</p>
+          </th>
+          <th></th>
+          <th>
+            <a>Item3</a>
+            <p>Item3Decription</p>
+          </th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>
+            <a>Item4</a>
+            <p>Item4Decription</p>
+          </th>
+          <th></th>
+          <th>
+            <a>Item5</a>
+            <p>Item5Decription</p>
+          </th>
+          <th></th>
+          <th>
+            <a>Item6</a>
+            <p>Item6Decription</p>
+          </th>
+          <th></th>
+        </tr>
+        <tr>
+          <th>
+            <a>Item7</a>
+            <p>Item7Decription</p>
+          </th>
+          <th></th>
+          <th>
+            <a>Item8</a>
+            <p>Item8Decription</p>
+          </th>
+          <th></th>
+          <th>
+            <a>Item9</a>
+            <p>Item9Decription</p>
+          </th>
+          <th></th>
+        </tr>
+      </table>
+    </body>
+  );
+}
