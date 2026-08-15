@@ -30,7 +30,7 @@ DELETE → adat törlése
 */
 
   return (
-    <form style={{ background: "black", color: "white", height: "100vh" }}>
+    <form style={{ background: "black", color: "white", height: "100%" }}>
       <div>
         <p>Please Register an account!</p>
         <input

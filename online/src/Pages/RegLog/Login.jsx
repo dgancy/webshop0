@@ -11,7 +11,7 @@ export default function Login() {
   }*/
 
   return (
-    <form style={{ background: "black", color: "white", height: "100vh" }}>
+    <form style={{ background: "black", color: "white", height: "100%" }}>
       <div>
         <p>Please Login with your account!</p>
         <input
