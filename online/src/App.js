@@ -5,7 +5,7 @@ import Login from "./Pages/RegLog/Login";
 import Register from "./Pages/RegLog/Register";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Shop from "./Pages/Shop";
-import Books from "./Pages/BooksPage/Books";
+import Books from "./Pages/Books";
 
 function App() {
   return (

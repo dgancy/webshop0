@@ -13,10 +13,7 @@ export default function Shop() {
   const nav = useNavigate();
 
   const BookInfo = (bookId) => {
-    console.log(bookId);
-
     sessionStorage.setItem("bookId", bookId);
-    console.log("session stored : ",sessionStorage.getItem("bookId"))
     nav("/books");
   };
 
@@ -39,71 +36,71 @@ export default function Shop() {
       >
         <tr>
           <th>
-            <div onClick={() => BookInfo("book1")}>
+            <div onClick={() => BookInfo("book01")}>
               <h2>
                 <a href="/">Item1</a>
               </h2>
-              <img alt="book1" id="book1" value="book1" src={Book01} />
+              <img alt="book1" id="Book01" value="book1" src={Book01} />
             </div>
             <p>Item1Description</p>
           </th>
           <th>
-            <div onClick={() => BookInfo("book2")}>
+            <div onClick={() => BookInfo("book02")}>
               <h2>Item2</h2>
-              <img alt="book2" id="book2" src={Book02} />
+              <img alt="book2" id="Book02" src={Book02} />
             </div>
             <p>Item2Description</p>
           </th>
           <th>
-            <div onClick={() => BookInfo("book3")}>
+            <div onClick={() => BookInfo("book03")}>
               <h2>Item3</h2>
-              <img alt="book3" id="book3" src={Book03} />
+              <img alt="book3" id="Book03" src={Book03} />
             </div>
             <p>Item3Description</p>
           </th>
         </tr>
         <tr>
           <th>
-            <div onClick={() => BookInfo("book4")}>
+            <div onClick={() => BookInfo("book04")}>
               <h2>Item4</h2>
-              <img alt="book4" id="book4" src={Book04} />
+              <img alt="book4" id="Book04" src={Book04} />
             </div>
             <p>Item4Description</p>
           </th>
           <th>
-            <div onClick={() => BookInfo("book5")}>
+            <div onClick={() => BookInfo("book05")}>
               <h2>Item5</h2>
-              <img alt="book5" id="book5" src={Book05} />
+              <img alt="book5" id="Book05" src={Book05} />
             </div>
             <p>Item5Description</p>
           </th>
           <th>
-            <div onClick={() => BookInfo("book6")}>
+            <div onClick={() => BookInfo("book06")}>
               <h2>Item6</h2>
-              <img alt="book6" id="book6" src={Book06} />
+              <img alt="book6" id="Book06" src={Book06} />
             </div>
             <p>Item6Description</p>
           </th>
         </tr>
         <tr>
           <th>
-            <div onClick={() => BookInfo("book7")}>
+            <div onClick={() => BookInfo("book07")}>
               <h2>Item7</h2>
-              <img alt="book7" id="book7" src={Book07} />
+              <img alt="book7" id="Book07" src={Book07} />
             </div>
             <p>Item7Description</p>
           </th>
           <th>
-            <div onClick={() => BookInfo("book8")}>
+            <div onClick={() => BookInfo("book08")}>
               <h2>Item8</h2>
-              <img alt="book8" id="book8" src={Book08} />
+              <img alt="book8" id="Book08" src={Book08} />
             </div>
             <p>Item8Description</p>
           </th>
           <th>
-            <div onClick={() => BookInfo("book9")}>
+            <div onClick={() => BookInfo("book09")}>
               <h2>Item9</h2>
-              <img alt="book9" id="book9" src={Book09} />
+              <img alt="book9" id="Book09" src={Book09} />
             </div>
             <p>Item9Description</p>
           </th>
