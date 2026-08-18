@@ -16,6 +16,9 @@ export default function NavBar() {
   const navigateToShop = () => {
     nav("/shop");
   };
+  const navigateToShopCart = () => {
+    nav("/shopcart");
+  };
 
   return (
     <div style={{ textAlign: "right" }}>
@@ -80,6 +83,7 @@ export default function NavBar() {
           cursor: "pointer",
           color: "black",
         }}
+        onClick={navigateToShopCart}
       >
         🛒
       </button>

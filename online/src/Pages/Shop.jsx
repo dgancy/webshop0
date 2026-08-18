@@ -17,6 +17,10 @@ export default function Shop() {
     nav("/books");
   };
 
+  const AddToCart = (bookId, numberOfBooks) => {
+    sessionStorage.setItem("bookId", bookId, "numberOfBooks", numberOfBooks);
+  };
+
   return (
     <form
       style={{
@@ -43,6 +47,10 @@ export default function Shop() {
               <img alt="book1" id="Book01" value="book1" src={Book01} />
             </div>
             <p>Item1Description</p>
+            <div onClick={() => AddToCart("book01")}>
+              <input type="number" />
+              <button>Add</button>
+            </div>
           </th>
           <th>
             <div onClick={() => BookInfo("book02")}>
@@ -50,6 +58,10 @@ export default function Shop() {
               <img alt="book2" id="Book02" src={Book02} />
             </div>
             <p>Item2Description</p>
+            <div>
+              <input type="number" />
+              <button>Add</button>
+            </div>
           </th>
           <th>
             <div onClick={() => BookInfo("book03")}>
@@ -57,6 +69,10 @@ export default function Shop() {
               <img alt="book3" id="Book03" src={Book03} />
             </div>
             <p>Item3Description</p>
+            <div>
+              <input type="number" />
+              <button>Add</button>
+            </div>
           </th>
         </tr>
         <tr>
@@ -66,6 +82,10 @@ export default function Shop() {
               <img alt="book4" id="Book04" src={Book04} />
             </div>
             <p>Item4Description</p>
+            <div>
+              <input type="number" />
+              <button>Add</button>
+            </div>
           </th>
           <th>
             <div onClick={() => BookInfo("book05")}>
@@ -73,6 +93,10 @@ export default function Shop() {
               <img alt="book5" id="Book05" src={Book05} />
             </div>
             <p>Item5Description</p>
+            <div>
+              <input type="number" />
+              <button>Add</button>
+            </div>
           </th>
           <th>
             <div onClick={() => BookInfo("book06")}>
@@ -80,6 +104,10 @@ export default function Shop() {
               <img alt="book6" id="Book06" src={Book06} />
             </div>
             <p>Item6Description</p>
+            <div>
+              <input type="number" />
+              <button>Add</button>
+            </div>
           </th>
         </tr>
         <tr>
@@ -89,6 +117,10 @@ export default function Shop() {
               <img alt="book7" id="Book07" src={Book07} />
             </div>
             <p>Item7Description</p>
+            <div>
+              <input type="number" />
+              <button>Add</button>
+            </div>
           </th>
           <th>
             <div onClick={() => BookInfo("book08")}>
@@ -96,6 +128,10 @@ export default function Shop() {
               <img alt="book8" id="Book08" src={Book08} />
             </div>
             <p>Item8Description</p>
+            <div>
+              <input type="number" />
+              <button>Add</button>
+            </div>
           </th>
           <th>
             <div onClick={() => BookInfo("book09")}>
@@ -103,6 +139,10 @@ export default function Shop() {
               <img alt="book9" id="Book09" src={Book09} />
             </div>
             <p>Item9Description</p>
+            <div>
+              <input type="number" />
+              <button>Add</button>
+            </div>
           </th>
         </tr>
       </table>

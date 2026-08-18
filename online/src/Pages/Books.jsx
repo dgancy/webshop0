@@ -12,21 +12,20 @@ import Book09 from "../Images/Books/Book_09.png";
 export default function Books() {
   const BookNumber = sessionStorage.getItem("bookId");
   const Books = {
-    book01: Book01,
-    book02: Book02,
-    book03: Book03,
-    book04: Book04,
-    book05: Book05,
-    book06: Book06,
-    book07: Book07,
-    book08: Book08,
-    book09: Book09,
+    book01: { name: "Item01", image: Book01, description: "Item01Description" },
+    book02: { name: "Item02", image: Book02, description: "Item02Description" },
+    book03: { name: "Item03", image: Book03, description: "Item03Description" },
+    book04: { name: "Item04", image: Book04, description: "Item04Description" },
+    book05: { name: "Item05", image: Book05, description: "Item05Description" },
+    book06: { name: "Item06", image: Book06, description: "Item06Description" },
+    book07: { name: "Item07", image: Book07, description: "Item07Description" },
+    book08: { name: "Item08", image: Book08, description: "Item08Description" },
+    book09: { name: "Item09", image: Book09, description: "Item09Description" },
   };
 
-  console.log("BookNumber:", BookNumber);
-  console.log("All keys:", Object.keys(Books));
-  console.log("Selected image:", Books[BookNumber]);
+  const selectedBookData = Books[BookNumber];
 
+  console.log("BookNumber:", BookNumber);
 
   return (
     <form>
@@ -34,10 +33,10 @@ export default function Books() {
         <tr>
           <th>
             <div>
-              <h2>Item7</h2>
-              <img alt="ChoosedBook" id="ChoosedBook" src={Books[BookNumber]} />
+              <h2>{selectedBookData.name}</h2>
+              <img alt="ChoosedBook" id="ChoosedBook" src={selectedBookData.image} />
             </div>
-            <p>Item7Description</p>
+            <p>{selectedBookData.description}</p>
           </th>
         </tr>
       </div>
