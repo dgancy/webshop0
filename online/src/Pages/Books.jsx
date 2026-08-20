@@ -30,15 +30,15 @@ export default function Books() {
   return (
     <form>
       <div>
-        <tr>
-          <th>
-            <div>
-              <h2>{selectedBookData.name}</h2>
-              <img alt="ChoosedBook" id="ChoosedBook" src={selectedBookData.image} />
-            </div>
-            <p>{selectedBookData.description}</p>
-          </th>
-        </tr>
+        <div>
+          <h2>{selectedBookData.name}</h2>
+          <img
+            alt="ChoosedBook"
+            id="ChoosedBook"
+            src={selectedBookData.image}
+          />
+        </div>
+        <p>{selectedBookData.description}</p>
       </div>
     </form>
   );
