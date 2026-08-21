@@ -2,12 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  max-width: 100%;
+  margin-left: 30%;
 }
 
 div.gallery-item {
   padding: 10px;
   margin: 15px;
-  width: 180px;
+  width: 250px;
 }
 
 div.gallery-item:hover {
@@ -15,7 +17,8 @@ div.gallery-item:hover {
 }
 
 div.gallery-item img {
-  width: 100%;
+  width: 220px;
+  height: 175px;
   height: auto;
 }
 

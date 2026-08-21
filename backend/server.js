@@ -12,19 +12,27 @@ app.get("/", (req, res) => {
   });
 });
 
-app.post("/register", (req,res, ) => {//app.post where we want the data, request the data and response something for that.
-    console.log("Data from Frontend : ");
-    console.log(req.body); //REQuest the bodz which contains the data from frontend
+app.post("/register", (req, res) => {
+  //app.post where we want the data, request the data and response something for that.
+  console.log("Data from Frontend : ");
+  console.log(req.body); //REQuest the bodz which contains the data from frontend
 
-    res.json({
-      message: "Registration data received successfully : ",//backend write it for response.
-      receivedData: req.body, //
-    });
+  res.json({
+    message: "Registration data received successfully : ", //backend write it for response.
+    receivedData: req.body, //
   });
+});
 
+app.post("/shopcart", (req, res) => {
+  //app.post where we want the data, request the data and response something for that.
+  console.log("Data from Frontend : ", req.body);//REQuest the bodz which contains the data from frontend
 
+  res.status(200).json({
+    message: "ShopCart data received successfully : ", //backend write it for response.
+    receivedData: req.body, //
+  });
+});
 
-  
 app.listen(5000, () => {
   console.log("Server fut: 5000");
 });

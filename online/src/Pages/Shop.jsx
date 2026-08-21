@@ -30,12 +30,25 @@ export default function Shop() {
     book09: "",
   });
 
-  const AddToCart = (bookId) => {
-    sessionStorage.setItem("bookIdToShopCart", bookId);
-    sessionStorage.setItem("numberOfBooksToShopCart", numberOfBooks);
+  const DataToShopCart = async (bookId) => {
+    const dataToBackend = {
+      bookId: bookId,
+      quantity: numberOfBooks[bookId],
+    };
 
-    console.log("Book:", bookId);
-    console.log("Quantity:", numberOfBooks);
+    console.log("Küldött adat:", dataToBackend);
+    try {
+      const response = await fetch("http://localhost:5000/shopcart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataToBackend),
+      });
+      console.log(response);
+    } catch (error) {
+      console.log("Hiba:", error);
+    }
   };
 
   return (
@@ -61,7 +74,7 @@ export default function Shop() {
               })
             }
           />
-          <button type="button" onClick={() => AddToCart("book01")}>
+          <button type="button" onClick={() => DataToShopCart("book01")}>
             Add
           </button>
         </div>
@@ -85,7 +98,7 @@ export default function Shop() {
               })
             }
           />
-          <button type="button" onClick={() => AddToCart("book02")}>
+          <button type="button" onClick={() => DataToShopCart("book02")}>
             Add
           </button>
         </div>
@@ -109,7 +122,7 @@ export default function Shop() {
               })
             }
           />
-          <button type="button" onClick={() => AddToCart("book03")}>
+          <button type="button" onClick={() => DataToShopCart("book03")}>
             Add
           </button>
         </div>
@@ -133,7 +146,7 @@ export default function Shop() {
               })
             }
           />
-          <button type="button" onClick={() => AddToCart("book04")}>
+          <button type="button" onClick={() => DataToShopCart("book04")}>
             Add
           </button>
         </div>
@@ -157,7 +170,7 @@ export default function Shop() {
               })
             }
           />
-          <button type="button" onClick={() => AddToCart("book05")}>
+          <button type="button" onClick={() => DataToShopCart("book05")}>
             Add
           </button>
         </div>
@@ -181,7 +194,7 @@ export default function Shop() {
               })
             }
           />
-          <button type="button" onClick={() => AddToCart("book06")}>
+          <button type="button" onClick={() => DataToShopCart("book06")}>
             Add
           </button>
         </div>
@@ -205,7 +218,7 @@ export default function Shop() {
               })
             }
           />
-          <button type="button" onClick={() => AddToCart("book07")}>
+          <button type="button" onClick={() => DataToShopCart("book07")}>
             Add
           </button>
         </div>
@@ -215,7 +228,8 @@ export default function Shop() {
           <h2>Item8</h2>
           <img alt="book8" id="Book08" src={Book08} />
           <p>Item8Description</p>
-          <div className="desc"></div>
+        </div>
+        <div className="desc">
           <input
             className="in"
             width="50px"
@@ -228,7 +242,7 @@ export default function Shop() {
               })
             }
           />
-          <button type="button" onClick={() => AddToCart("book08")}>
+          <button type="button" onClick={() => DataToShopCart("book08")}>
             Add
           </button>
         </div>
@@ -251,7 +265,7 @@ export default function Shop() {
               })
             }
           />
-          <button type="button" onClick={() => AddToCart("book09")}>
+          <button type="button" onClick={() => DataToShopCart("book09")}>
             Add
           </button>
         </div>
