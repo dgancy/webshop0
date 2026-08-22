@@ -23,14 +23,28 @@ app.post("/register", (req, res) => {
   });
 });
 
+let shopCart = [];
+
 app.post("/shopcart", (req, res) => {
   //app.post where we want the data, request the data and response something for that.
-  console.log("Data from Frontend : ", req.body);//REQuest the bodz which contains the data from frontend
+  const { bookId, quantity } = req.body;
+  console.log("Data from Frontend : ", req.body); //REQuest the bodz which contains the data from frontend
+
+  shopCart.push({
+    bookId: bookId,
+    quantity: quantity,
+  });
+
+  console.log("shopcart : ", shopCart);
 
   res.status(200).json({
     message: "ShopCart data received successfully : ", //backend write it for response.
     receivedData: req.body, //
   });
+});
+
+app.get("/shopcart", (req, res) => {
+  res.json(shopCart);
 });
 
 app.listen(5000, () => {
