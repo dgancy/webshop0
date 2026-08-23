@@ -54,6 +54,26 @@ export default function Shop() {
   return (
     <form className="gallery">
       <div className="gallery-item">
+
+    <div>
+      <h1>Shopping Cart</h1>
+
+      {(
+        shopCart.map((item, index) => (
+          <div key={index}>
+            <img src={Books[item.bookId]} alt={item.bookId} width="100" />
+
+            <h2>{item.bookId}</h2>
+
+            <p>Quantity: {item.quantity}</p>
+          </div>
+        ))
+      )}
+    </div>
+
+
+
+
         <div onClick={() => BookInfo("book01")}>
           <h2>
             <a href="/">Item1</a>
