@@ -18,7 +18,19 @@ export default function Shop() {
     nav("/books");
   };
 
-  const [numberOfBooks, setNumberOfBooks] = useState({
+  const books = {
+    book01: { name: "Item01", image: Book01, description: "Item01Description" },
+    book02: { name: "Item02", image: Book02, description: "Item02Description" },
+    book03: { name: "Item03", image: Book03, description: "Item03Description" },
+    book04: { name: "Item04", image: Book04, description: "Item04Description" },
+    book05: { name: "Item05", image: Book05, description: "Item05Description" },
+    book06: { name: "Item06", image: Book06, description: "Item06Description" },
+    book07: { name: "Item07", image: Book07, description: "Item07Description" },
+    book08: { name: "Item08", image: Book08, description: "Item08Description" },
+    book09: { name: "Item09", image: Book09, description: "Item09Description" },
+  };
+
+  const [Quantities, setQuantities] = useState({
     book01: "",
     book02: "",
     book03: "",
@@ -32,8 +44,8 @@ export default function Shop() {
 
   const DataToShopCart = async (bookId) => {
     const dataToBackend = {
-      bookId: bookId,
-      quantity: numberOfBooks[bookId],
+      bookId,
+      quantity: Quantities[bookId],
     };
 
     console.log("Küldött adat:", dataToBackend);
@@ -53,243 +65,32 @@ export default function Shop() {
 
   return (
     <form className="gallery">
-      <div className="gallery-item">
-
-    <div>
-      <h1>Shopping Cart</h1>
-
-      {(
-        shopCart.map((item, index) => (
-          <div key={index}>
-            <img src={Books[item.bookId]} alt={item.bookId} width="100" />
-
-            <h2>{item.bookId}</h2>
-
-            <p>Quantity: {item.quantity}</p>
+      {Object.entries(books).map(([bookId, book]) => (
+        <div className="gallery-item" key={bookId}>
+          <div onClick={() => BookInfo(bookId)}>
+            <h2>{book.name} </h2>
+            <img alt={book.name} src={book.image} />
+            <p>{book.description}</p>
           </div>
-        ))
-      )}
-    </div>
-
-
-
-
-        <div onClick={() => BookInfo("book01")}>
-          <h2>
-            <a href="/">Item1</a>
-          </h2>
-          <img alt="book1" id="Book01" value="book1" src={Book01} />
-          <p>Item1Description</p>
+          <div className="desc">
+            <input
+              className="in"
+              width="50px"
+              type="number"
+              value={Quantities[bookId]}
+              onChange={(e) =>
+                setQuantities({
+                  ...Quantities,
+                  [bookId]: Number(e.target.value),
+                })
+              }
+            />
+            <button type="button" onClick={() => DataToShopCart(bookId)}>
+              Add
+            </button>
+          </div>
         </div>
-        <div className="desc">
-          <input
-            className="in"
-            width="50px"
-            type="number"
-            value={numberOfBooks.book01}
-            onChange={(e) =>
-              setNumberOfBooks({
-                ...numberOfBooks,
-                book01: e.target.value,
-              })
-            }
-          />
-          <button type="button" onClick={() => DataToShopCart("book01")}>
-            Add
-          </button>
-        </div>
-      </div>
-      <div className="gallery-item">
-        <div onClick={() => BookInfo("book02")}>
-          <h2>Item2</h2>
-          <img alt="book2" id="Book02" src={Book02} />
-          <p>Item2Description</p>
-        </div>
-        <div className="desc">
-          <input
-            className="in"
-            width="50px"
-            type="number"
-            value={numberOfBooks.book02}
-            onChange={(e) =>
-              setNumberOfBooks({
-                ...numberOfBooks,
-                book02: e.target.value,
-              })
-            }
-          />
-          <button type="button" onClick={() => DataToShopCart("book02")}>
-            Add
-          </button>
-        </div>
-      </div>
-      <div className="gallery-item">
-        <div onClick={() => BookInfo("book03")}>
-          <h2>Item3</h2>
-          <img alt="book3" id="Book03" src={Book03} />
-          <p>Item3Description</p>
-        </div>
-        <div className="desc">
-          <input
-            className="in"
-            width="50px"
-            type="number"
-            value={numberOfBooks.book03}
-            onChange={(e) =>
-              setNumberOfBooks({
-                ...numberOfBooks,
-                book03: e.target.value,
-              })
-            }
-          />
-          <button type="button" onClick={() => DataToShopCart("book03")}>
-            Add
-          </button>
-        </div>
-      </div>
-      <div className="gallery-item">
-        <div onClick={() => BookInfo("book04")}>
-          <h2>Item4</h2>
-          <img alt="book4" id="Book04" src={Book04} />
-          <p>Item4Description</p>
-        </div>
-        <div className="desc">
-          <input
-            className="in"
-            width="50px"
-            type="number"
-            value={numberOfBooks.book04}
-            onChange={(e) =>
-              setNumberOfBooks({
-                ...numberOfBooks,
-                book04: e.target.value,
-              })
-            }
-          />
-          <button type="button" onClick={() => DataToShopCart("book04")}>
-            Add
-          </button>
-        </div>
-      </div>
-      <div className="gallery-item">
-        <div onClick={() => BookInfo("book05")}>
-          <h2>Item5</h2>
-          <img alt="book5" id="Book05" src={Book05} />
-          <p>Item5Description</p>
-        </div>
-        <div className="desc">
-          <input
-            className="in"
-            width="50px"
-            type="number"
-            value={numberOfBooks.book05}
-            onChange={(e) =>
-              setNumberOfBooks({
-                ...numberOfBooks,
-                book05: e.target.value,
-              })
-            }
-          />
-          <button type="button" onClick={() => DataToShopCart("book05")}>
-            Add
-          </button>
-        </div>
-      </div>
-      <div className="gallery-item">
-        <div onClick={() => BookInfo("book06")}>
-          <h2>Item6</h2>
-          <img alt="book6" id="Book06" src={Book06} />
-          <p>Item6Description</p>
-        </div>
-        <div className="desc">
-          <input
-            className="in"
-            width="50px"
-            type="number"
-            value={numberOfBooks.book06}
-            onChange={(e) =>
-              setNumberOfBooks({
-                ...numberOfBooks,
-                book06: e.target.value,
-              })
-            }
-          />
-          <button type="button" onClick={() => DataToShopCart("book06")}>
-            Add
-          </button>
-        </div>
-      </div>
-      <div className="gallery-item">
-        <div onClick={() => BookInfo("book07")}>
-          <h2>Item7</h2>
-          <img alt="book7" id="Book07" src={Book07} />
-          <p>Item7Description</p>
-        </div>
-        <div className="desc">
-          <input
-            className="in"
-            width="50px"
-            type="number"
-            value={numberOfBooks.book07}
-            onChange={(e) =>
-              setNumberOfBooks({
-                ...numberOfBooks,
-                book07: e.target.value,
-              })
-            }
-          />
-          <button type="button" onClick={() => DataToShopCart("book07")}>
-            Add
-          </button>
-        </div>
-      </div>
-      <div className="gallery-item">
-        <div onClick={() => BookInfo("book08")}>
-          <h2>Item8</h2>
-          <img alt="book8" id="Book08" src={Book08} />
-          <p>Item8Description</p>
-        </div>
-        <div className="desc">
-          <input
-            className="in"
-            width="50px"
-            type="number"
-            value={numberOfBooks.book08}
-            onChange={(e) =>
-              setNumberOfBooks({
-                ...numberOfBooks,
-                book08: e.target.value,
-              })
-            }
-          />
-          <button type="button" onClick={() => DataToShopCart("book08")}>
-            Add
-          </button>
-        </div>
-      </div>
-      <div className="gallery-item">
-        <div onClick={() => BookInfo("book09")}>
-          <h2>Item9</h2>
-          <img alt="book9" id="Book09" src={Book09} />
-          <p>Item9Description</p>
-        </div>
-        <div className="desc">
-          <input
-            className="in"
-            type="number"
-            value={numberOfBooks.book09}
-            onChange={(e) =>
-              setNumberOfBooks({
-                ...numberOfBooks,
-                book09: e.target.value,
-              })
-            }
-          />
-          <button type="button" onClick={() => DataToShopCart("book09")}>
-            Add
-          </button>
-        </div>
-      </div>
+      ))}
     </form>
   );
 }
