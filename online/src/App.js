@@ -5,8 +5,8 @@ import Login from "./Pages/RegLog/Login";
 import Register from "./Pages/RegLog/Register";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Shop from "./Pages/Shop";
-import Books from "./Pages/Books";
 import ShopCart from "./Pages/ShopCart";
+import BooksInformation from "./Pages/BooksInformation";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<OpenPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/shop" element={<Shop />} />
-          <Route path="/books" element={<Books />} />
+          <Route path="/booksinfo" element={<BooksInformation />} />
           <Route path="/shopcart" element={<ShopCart />} />
           <Route path="/register" element={<Register />} />
         </Routes>
