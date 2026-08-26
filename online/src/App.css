@@ -30,3 +30,8 @@ div.gallery-item div.desc {
 .in {
   width: 50px;
 }
+
+.inputNormal {
+  width: 200px;
+  border-radius: 5%;
+}

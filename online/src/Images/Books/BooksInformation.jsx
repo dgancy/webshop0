@@ -1,4 +1,4 @@
-import BooksData from "../Images/Books/Books.jsx";
+import BooksData from "./Books.jsx";
 
 export default function BooksInformation() {
   const BookNumber = sessionStorage.getItem("bookId");

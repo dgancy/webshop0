@@ -4,9 +4,11 @@ import OpenPage from "./Pages/OpenPage";
 import Login from "./Pages/RegLog/Login";
 import Register from "./Pages/RegLog/Register";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Shop from "./Pages/Shop";
-import ShopCart from "./Pages/ShopCart";
-import BooksInformation from "./Pages/BooksInformation";
+import Shop from "./Images/Books/Shop";
+import ShopCart from "./Pages/Order/ShopCart";
+import BooksInformation from "./Images/Books/BooksInformation";
+import OrdersData from "./Pages/Order/OrdersData";
+import OrderSummary from "./Pages/Order/OrderSummary";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/booksinfo" element={<BooksInformation />} />
           <Route path="/shopcart" element={<ShopCart />} />
+          <Route path="/ordersdata" element={<OrdersData />} />
+          <Route path="/ordersummary" element={<OrderSummary />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import BooksData from "../Images/Books/Books";
+import BooksData from "./Books";
 
 export default function Shop() {
   const nav = useNavigate();
