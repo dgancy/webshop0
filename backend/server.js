@@ -47,6 +47,19 @@ app.get("/shopcart", (req, res) => {
   res.json(shopCart);
 });
 
+
+app.post("/userdata", (req, res) => {
+  //app.post where we want the data, request the data and response something for that.
+  const { fullName, mail, phoneNumber,location } = req.body;
+  console.log("UserData from Frontend : ", req.body); //REQuest the bodz which contains the data from frontend
+
+  res.status(200).json({
+    message: "ShopCart data received successfully : ", //backend write it for response.
+    receivedData: req.body, //
+  });
+});
+
+
 app.listen(5000, () => {
   console.log("Server fut: 5000");
 });
