@@ -21,8 +21,6 @@ export default function OrderSummary() {
 
   const [user, setUser] = useState([]);
 
-  const UserData = BooksData;
-
   const GetUsderData = async () => {
     try {
       const response = await fetch("http://localhost:5000/userdata");
@@ -54,7 +52,16 @@ export default function OrderSummary() {
           </div>
         ))}
       </div>
-      <div></div>
+      <div>
+        {user.map((item, index) => (
+          <div key={index}>
+            <p>{item.fullName}</p>
+            <p>{item.mail}</p>
+            <p>{item.phoneNumber}</p>
+            <p>{item.location}</p>
+          </div>
+        ))}
+      </div>
       <div>
         <button>Continue</button>
       </div>
